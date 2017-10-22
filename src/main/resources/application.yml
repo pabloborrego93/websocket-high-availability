@@ -1,0 +1,19 @@
+datasource:
+    url: jdbc:hsqldb:mem:dataSource
+    username: sa
+    password:
+---
+spring:
+  profiles.active: local
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/socketDB?&useSSL=false
+    username: username
+    password: password
+---
+server:
+  port: 8082
